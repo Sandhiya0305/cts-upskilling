@@ -1,0 +1,10 @@
+/*
+1. Why CSS? Inline vs. Internal vs. External
+Scenario: The designer wants you to experiment with different ways to apply styles.
+Objective: Understand various CSS inclusion methods and their impact.
+Task:
+• Apply an inline style to make one heading red.
+• Use an embedded <style> tag in the <head> to define body background.
+• Link an external stylesheet styles.css and move all reusable styles there.
+• Add comments in your CSS to label each section (/* Header styles */)
+*/

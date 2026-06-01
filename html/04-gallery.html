@@ -7,3 +7,44 @@ Task:
 • Include alt, title, and style each image with borders using a class
 • Add a caption to describe each event
 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Event Gallery</title>
+	<style>
+		.gallery-image {
+			border: 2px solid #444;
+			width: 200px;
+			height: 150px;
+			object-fit: cover;
+		}
+
+		table {
+			border-collapse: collapse;
+		}
+
+		td {
+			padding: 8px;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<table>
+		<caption>Community events</caption>
+		<tr>
+			<td><img class="gallery-image" src="assets/community-meetup.jpg" alt="Community meetup" title="Community Meetup"><br>Community Meetup</td>
+			<td><img class="gallery-image" src="assets/workshop.jpg" alt="Workshop session" title="Workshop Session"><br>Workshop Session</td>
+			<td><img class="gallery-image" src="assets/networking.jpg" alt="Networking event" title="Networking Event"><br>Networking Event</td>
+		</tr>
+		<tr>
+			<td><img class="gallery-image" src="assets/volunteer.jpg" alt="Volunteer drive" title="Volunteer Drive"><br>Volunteer Drive</td>
+			<td><img class="gallery-image" src="assets/celebration.jpeg" alt="Celebration day" title="Celebration Day"><br>Celebration Day</td>
+			<td><img class="gallery-image" src="assets/team-building.jpg" alt="Team building activity" title="Team Building Activity"><br>Team Building Activity</td>
+		</tr>
+	</table>
+</body>
+</html>

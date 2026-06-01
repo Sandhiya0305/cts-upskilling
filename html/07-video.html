@@ -7,3 +7,74 @@ Task:
 • Use oncanplay to display a message like "Video ready to play"
 • Use onbeforeunload to warn users if they try to leave the form page unfinished
 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Video Invite</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 24px;
+			background: #f1f6f3;
+		}
+
+		.wrap {
+			max-width: 720px;
+			margin: 0 auto;
+			background: white;
+			padding: 20px;
+			border-radius: 10px;
+			border: 1px solid #cdd9d0;
+		}
+
+		video {
+			width: 100%;
+			max-width: 640px;
+			border-radius: 8px;
+			border: 1px solid #a6b8ad;
+		}
+
+		#videoStatus {
+			margin-top: 12px;
+			font-weight: 700;
+			color: #24623d;
+		}
+	</style>
+</head>
+<body>
+	<section class="wrap">
+		<h1>Welcome to Our Event</h1>
+
+		<video id="promoVideo" controls oncanplay="videoReady()">
+	            <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
+			Your browser does not support the video tag.
+		</video>
+
+		<div id="videoStatus">Loading the video...</div>
+	</section>
+
+	<script>
+	        let pageFinished = false;
+	        const promoVideo = document.getElementById('promoVideo');
+
+		function videoReady() {
+			document.getElementById('videoStatus').textContent = 'Video playing';
+		}
+
+	        promoVideo.addEventListener('ended', function () {
+	            pageFinished = true;
+	            document.getElementById('videoStatus').textContent = 'Video finished.';
+	        });
+
+		window.onbeforeunload = function () {
+			if (!pageFinished) {
+				return 'The page is not finished yet.';
+			}
+		};
+	</script>
+</body>
+</html>

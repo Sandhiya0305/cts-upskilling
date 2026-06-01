@@ -7,3 +7,72 @@ Task:
 • Use the Console tab to view logs from your <script>
 • Add breakpoints in JS and reload the page to watch variable values
 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Debugging Demo</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 24px;
+		}
+
+		.demo {
+			max-width: 620px;
+			margin: 0 auto;
+			background: white;
+			padding: 20px;
+			border-radius: 10px;
+		}
+
+		.box {
+			padding: 16px;
+			margin-top: 12px;
+			background: #f1f1f1;
+			border: 1px solid black;
+		}
+
+		button {
+			font: inherit;
+			padding: 10px 14px;
+			border: none;
+			border-radius: 6px;
+			background: #2c6bed;
+			color: white;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<section class="demo">
+		<h1>Debugging with Chrome DevTools</h1>
+		<p>Open Inspect Element and Console to check styles and logs.</p>
+
+		<div class="box" id="statusBox">Status box</div>
+		<p id="resultText">Press the button.</p>
+		<button type="button" onclick="runDemo()">Run Demo</button>
+	</section>
+
+	<script>
+		function runDemo() {
+			const userCount = 3;
+			const eventCount = 7;
+			const total = userCount + eventCount;
+
+			console.log('userCount:', userCount);
+			console.log('eventCount:', eventCount);
+			console.log('total:', total);
+
+			debugger;
+
+			document.getElementById('resultText').textContent = 'Total items: ' + total;
+		}
+
+		console.log('Page loaded and ready for debugging.');
+	</script>
+</body>
+</html>

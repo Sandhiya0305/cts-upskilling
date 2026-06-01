@@ -8,3 +8,82 @@ Task:
 • Handle permission denial and timeouts
 • Use high accuracy options
 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Nearby Events</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 24px;
+		}
+
+		.card {
+			max-width: 560px;
+			margin: 0 auto;
+			background: white;
+			border-radius: 10px;
+			padding: 20px;
+		}
+
+		button {
+			font: inherit;
+			padding: 10px 14px;
+			border: none;
+			border-radius: 6px;
+			background: #126b94;
+			color: white;
+		}
+
+		#locationResult {
+			margin-top: 14px;
+			white-space: pre-line;
+		}
+	</style>
+</head>
+<body>
+	<section class="card">
+
+		<button type="button" onclick="findNearbyEvents()">Find Nearby Events</button>
+		<div id="locationResult"></div>
+	</section>
+
+	<script>
+		function findNearbyEvents() {
+			const locationResult = document.getElementById('locationResult');
+
+			if (!navigator.geolocation) {
+				locationResult.textContent = 'Geolocation is not supported in this browser.';
+				return;
+			}
+
+			navigator.geolocation.getCurrentPosition(
+				function (position) {
+					locationResult.textContent =
+						'Latitude: ' + position.coords.latitude + '\n' +
+						'Longitude: ' + position.coords.longitude + '\n' +
+						'Accuracy: ' + position.coords.accuracy + ' meters';
+				},
+				function (error) {
+					if (error.code === error.PERMISSION_DENIED) {
+						locationResult.textContent = 'Permission denied. Turn on location access.';
+					} else if (error.code === error.TIMEOUT) {
+						locationResult.textContent = 'The request timed out.';
+					} else {
+						locationResult.textContent = 'Unable to get your location.';
+					}
+				},
+				{
+					enableHighAccuracy: true,
+					timeout: 10000,
+					maximumAge: 0
+				}
+			);
+		}
+	</script>
+</body>
+</html>

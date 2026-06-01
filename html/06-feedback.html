@@ -9,3 +9,140 @@ Task:
 • ondblclick on an image to enlarge it
 • Capture key events in the feedback textarea and count characters
 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Event Feedback</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 24px;
+			
+		}
+
+		.panel {
+			max-width: 700px;
+			margin: 0 auto;
+			background: white;
+			border-radius: 10px;
+			padding: 20px;
+		}
+
+		input, select, textarea, button {
+			font: inherit;
+			padding: 10px 12px;
+			border: 1px solid #c6b49b;
+			border-radius: 6px;
+			width: 100%;
+			box-sizing: border-box;
+		}
+
+		textarea {
+			min-height: 120px;
+			resize: vertical;
+		}
+
+		button {
+			width: auto;
+			background: #8a4b08;
+			color: white;
+			
+		}
+
+		.row {
+			display: grid;
+			gap: 14px;
+			margin-bottom: 14px;
+		}
+
+		#promoImage {
+			width: 220px;
+			max-width: 100%;
+			border: 2px solid #8a4b08;
+			border-radius: 8px;
+			cursor: zoom-in;
+			transition: transform 0.2s ease;
+		}
+
+		#promoImage.enlarged {
+			transform: scale(1.45);
+			cursor: zoom-out;
+		}
+
+		.note {
+			color: #5b4631;
+			font-size: 0.95rem;
+		}
+	</style>
+</head>
+<body>
+	<section class="panel">
+		<h1>Event Feedback</h1>
+		<p class="note">Share what you thought about the event.</p>
+
+		<div class="row">
+			<label for="phone">Phone Number</label>
+			<input type="text" id="phone" placeholder="Enter 10 digit phone number" onblur="validatePhone()">
+			<small id="phoneError"></small>
+		</div>
+
+		<div class="row">
+			<label for="eventFee">Choose Event</label>
+			<select id="eventFee" onchange="showFee()">
+				<option value="">Pick one</option>
+				<option value="200">Workshop - Rs. 200</option>
+				<option value="500">Seminar - Rs. 500</option>
+				<option value="0">Community Meet - Free</option>
+			</select>
+			<div id="feeDisplay">Selected fee will appear here.</div>
+		</div>
+
+		<div class="row">
+			<img id="promoImage" src="assets/community-meetup.jpg" alt="Event preview" title="Double click to enlarge" ondblclick="toggleImageSize()">
+		</div>
+
+		<div class="row">
+			<label for="feedback">Feedback</label>
+			<textarea id="feedback" placeholder="Write your feedback here" onkeyup="countCharacters()"></textarea>
+			<div id="charCount">0 characters</div>
+		</div>
+
+		<button type="button" onclick="submitFeedback()">Submit Feedback</button>
+		<p id="confirmationText"></p>
+	</section>
+
+	<script>
+		function validatePhone() {
+			const phone = document.getElementById('phone');
+			const phoneError = document.getElementById('phoneError');
+			const isValid = /^[0-9]{10}$/.test(phone.value.trim());
+
+			phoneError.textContent = isValid ? 'Phone looks fine.' : 'Please enter a 10 digit phone number.';
+			phoneError.style.color = isValid ? 'green' : 'crimson';
+		}
+
+		function showFee() {
+			const eventFee = document.getElementById('eventFee');
+			const feeDisplay = document.getElementById('feeDisplay');
+			feeDisplay.textContent = eventFee.value === '' ? 'Selected fee will appear here.' : 'Event fee: Rs. ' + eventFee.value;
+		}
+
+		function submitFeedback() {
+			document.getElementById('confirmationText').textContent = 'Thanks for the feedback. We got it.';
+		}
+
+		function toggleImageSize() {
+			document.getElementById('promoImage').classList.toggle('enlarged');
+		}
+
+		function countCharacters() {
+			const feedback = document.getElementById('feedback');
+			document.getElementById('charCount').textContent = feedback.value.length + ' characters';
+		}
+	</script>
+</body>
+</html>

@@ -7,3 +7,82 @@ Task:
 • On reload, retrieve and pre-select it
 • Add a "Clear Preferences" button that clears both localStorage and sessionStorage
 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>User Preferences</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 24px;
+			background: #f7f4fb;
+		}
+
+		.box {
+			max-width: 500px;
+			margin: 0 auto;
+			background: white;
+			border: 1px solid #d8cee9;
+			border-radius: 10px;
+			padding: 20px;
+		}
+
+		select, button {
+			font: inherit;
+			width: 100%;
+			padding: 10px 12px;
+			border-radius: 6px;
+			border: 1px solid #c2b6d9;
+			box-sizing: border-box;
+		}
+
+		button {
+			margin-top: 12px;
+			background: #5c3a8e;
+			color: white;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<section class="box">
+		<h1>Saved Preferences</h1>
+		<p>Pick a preferred event type.</p>
+
+		<label for="preferredEvent">Preferred Event Type</label>
+		<select id="preferredEvent" onchange="savePreference()">
+			<option value="">Choose one</option>
+			<option value="workshop">Workshop</option>
+			<option value="seminar">Seminar</option>
+			<option value="community">Community Meet</option>
+		</select>
+
+		<button type="button" onclick="clearPreferences()">Clear Preferences</button>
+	</section>
+
+	<script>
+		const preferredEvent = document.getElementById('preferredEvent');
+
+		function savePreference() {
+			localStorage.setItem('preferredEvent', preferredEvent.value);
+			sessionStorage.setItem('preferredEvent', preferredEvent.value);
+		}
+
+		function clearPreferences() {
+			localStorage.clear();
+			sessionStorage.clear();
+			preferredEvent.value = '';
+		}
+
+		const savedPreference = localStorage.getItem('preferredEvent');
+		if (savedPreference) {
+			preferredEvent.value = savedPreference;
+			sessionStorage.setItem('preferredEvent', savedPreference);
+		}
+	</script>
+</body>
+</html>

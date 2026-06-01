@@ -7,3 +7,15 @@ o Declare a double variable with a decimal value.
 o Cast it to an int and display the result.
 o Declare an int variable and cast it to a double, then display.
 */
+
+class TypeCastingExample {
+	public static void main(String[] args) {
+		double decimal = 45.89;
+		int whole = (int) decimal;
+		int number = 25;
+		double converted = (double) number;
+
+		System.out.println(whole);
+		System.out.println(converted);
+	}
+}

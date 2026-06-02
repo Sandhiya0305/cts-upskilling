@@ -7,3 +7,11 @@ Task:
 • Concatenate event info using template literals
 • Use ++ or -- to manage seat count on registration
 */
+
+const a = "Community Meetup";
+const b = "2026-06-10";
+let c = 10;
+
+console.log(`${a} on ${b} has ${c} seats`);
+c--;
+console.log(c);

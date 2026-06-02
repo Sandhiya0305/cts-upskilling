@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Working with Forms</title>
+</head>
+<body>
+    <!--
+    11. Working with Forms
+    Scenario: Create a registration form for event sign-up.
+    Objective: Connect form inputs to JavaScript.
+    Task:
+    • Capture name, email, and selected event using form.elements
+    • Prevent default form behavior using event.preventDefault()
+    • Validate inputs and show errors inline
+    -->
+    <form>
+        <input name="name" placeholder="name">
+        <span id="e1"></span>
+        <input name="email" placeholder="email">
+        <span id="e2"></span>
+        <input name="event" placeholder="event">
+        <span id="e3"></span>
+        <button type="submit">Submit</button>
+    </form>
+    <script>
+        const a = document.querySelector("form");
+
+        a.onsubmit = function (b) {
+            b.preventDefault();
+            const c = a.elements.name.value.trim();
+            const d = a.elements.email.value.trim();
+            const e = a.elements.event.value.trim();
+            document.querySelector("#e1").textContent = c ? "" : "Required";
+            document.querySelector("#e2").textContent = d ? "" : "Required";
+            document.querySelector("#e3").textContent = e ? "" : "Required";
+        };
+    </script>
+</body>
+</html>

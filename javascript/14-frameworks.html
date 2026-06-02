@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery and JS Frameworks</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <!--
+    14. jQuery and JS Frameworks
+    Scenario: Use jQuery to simplify DOM tasks.
+    Objective: Understand and use jQuery.
+    Task:
+    • Use $('#registerBtn').click(...) to handle click events
+    • Use .fadeIn() and .fadeOut() for event cards
+    • Mention one benefit of moving to frameworks like React or Vue
+    -->
+    <button id="registerBtn">Register</button>
+    <button id="hideBtn">Hide</button>
+    <div class="card" style="display:none;">Event card</div>
+    <p>React and Vue help build reusable UI faster.</p>
+    <script>
+        $("#registerBtn").click(function () {
+            $(".card").fadeIn();
+        });
+
+        $("#hideBtn").click(function () {
+            $(".card").fadeOut();
+        });
+
+        console.log("React and Vue help build reusable UI faster.");
+    </script>
+</body>
+</html>

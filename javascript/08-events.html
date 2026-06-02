@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Handling</title>
+</head>
+<body>
+    <!--
+    8. Event Handling
+    Scenario: Add interactive elements like buttons and filters.
+    Objective: Respond to user actions.
+    Task:
+    • Use onclick for "Register" buttons
+    • Use onchange to filter events by category
+    • Use keydown to allow quick search by name
+    -->
+    <div id="app">
+        <button id="registerBtn">Register</button>
+        <select id="cat">
+            <option value="all">all</option>
+            <option value="music">music</option>
+            <option value="tech">tech</option>
+        </select>
+        <input id="q" type="text" placeholder="search">
+        <div id="list"></div>
+    </div>
+    <script>
+        const a = [
+            { n: "Music Night", c: "music" },
+            { n: "Code Meet", c: "tech" },
+            { n: "Open Mic", c: "music" }
+        ];
+        const b = document.querySelector("#list");
+        const c = document.querySelector("#cat");
+        const d = document.querySelector("#q");
+
+        function e() {
+            const f = c.value;
+            const g = d.value.toLowerCase();
+            b.innerHTML = "";
+            a.filter(function (h) {
+                return (f === "all" || h.c === f) && h.n.toLowerCase().includes(g);
+            }).forEach(function (h) {
+                const i = document.createElement("div");
+                i.textContent = h.n;
+                b.appendChild(i);
+            });
+        }
+
+        document.querySelector("#registerBtn").onclick = function () {
+            console.log("Registered");
+        };
+
+        c.onchange = e;
+        d.onkeydown = e;
+        e();
+    </script>
+</body>
+</html>

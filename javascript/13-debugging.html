@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debugging and Testing</title>
+</head>
+<body>
+    <!--
+    13. Debugging and Testing
+    Scenario: Registration is failing silently. You need to debug.
+    Objective: Use browser tools to inspect and fix issues.
+    Task:
+    • Use Chrome Dev Tools Console and Network tab
+    • Add breakpoints and inspect variables
+    • Log form submission steps and check fetch request payload
+    -->
+    <form>
+        <input name="name" placeholder="name">
+        <input name="email" placeholder="email">
+        <button type="submit">Send</button>
+    </form>
+    <script>
+        const a = document.querySelector("form");
+
+        a.addEventListener("submit", function (b) {
+            b.preventDefault();
+            const c = { n: a.elements.name.value, e: a.elements.email.value };
+            console.log("submit");
+            console.log(c);
+            debugger;
+            fetch("https://jsonplaceholder.typicode.com/posts", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(c)
+            });
+        });
+    </script>
+</body>
+</html>

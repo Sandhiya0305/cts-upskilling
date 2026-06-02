@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation</title>
+</head>
+<body>
+    <!--
+    7. DOM Manipulation
+    Scenario: Display all events dynamically on the webpage.
+    Objective: Render events using JS.
+    Task:
+    • Access DOM elements using querySelector()
+    • Create and append event cards using createElement()
+    • Update UI when user registers or cancels
+    -->
+    <div id="app"></div>
+    <script>
+        const a = document.querySelector("#app");
+        const b = ["Workshop", "Music Night"];
+
+        b.forEach(function (c) {
+            const d = document.createElement("div");
+            d.textContent = c;
+            a.appendChild(d);
+        });
+
+        const e = document.createElement("button");
+        e.textContent = "Register";
+        e.onclick = function () {
+            const f = document.createElement("p");
+            f.textContent = "Registered";
+            a.appendChild(f);
+        };
+
+        const g = document.createElement("button");
+        g.textContent = "Cancel";
+        g.onclick = function () {
+            const f = a.querySelector("p:last-of-type");
+            if (f) f.remove();
+        };
+
+        a.appendChild(e);
+        a.appendChild(g);
+    </script>
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Local Community Event Portal</title>
+	<style>
+		body {
+			background: #eef4ff;
+		}
+	</style>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<header class="site-header">
+		<nav class="link-nav">
+			<ul class="nav-list">
+				<li><a href="#task1">Task 1</a></li>
+				<li><a href="#task3">Task 3</a></li>
+				<li><a href="#task6">Task 6</a></li>
+				<li><a href="#task10">Task 10</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<main>
+		<!-- 1. Why CSS? Inline vs. Internal vs. External -->
+		<section id="task1" class="boxModelDemo">
+			<h1 style="color: red;">Local Community Event Portal</h1>
+			<p>Inline, internal, and external CSS work together here.</p>
+			<button class="cta-button">Join Now</button>
+		</section>
+
+		<!-- 2. CSS Syntax and Comments -->
+		<section id="task2" class="boxModelDemo">
+			<h2>CSS Syntax and Comments</h2>
+			<button class="cta-button">Main CTA</button>
+		</section>
+
+		<!-- 3. Selectors Playground -->
+		<section id="task3">
+			<header id="mainHeader">
+				<h2>Selectors Playground</h2>
+			</header>
+			<div class="eventCard">
+				<h3>Workshop</h3>
+				<p>Learn with others.</p>
+			</div>
+			<div class="eventCard">
+				<h3>Music Night</h3>
+				<p>Enjoy the evening.</p>
+			</div>
+		</section>
+
+		<!-- 4. Color & Background Styling -->
+		<section id="task4" class="boxModelDemo">
+			<h2 class="sectionHeader">City Council Branding</h2>
+			<p>Colors and background visuals.</p>
+		</section>
+
+		<!-- 5. Typography: Fonts and Text -->
+		<section id="task5" class="boxModelDemo">
+			<h2 class="title">Typography</h2>
+			<h3 class="subtitle">Readable text</h3>
+			<p class="description">More appealing fonts and better readability.</p>
+		</section>
+
+		<!-- 6. Link and List Styling -->
+		<section id="task6" class="boxModelDemo">
+			<h2>Link and List Styling</h2>
+			<nav class="link-nav">
+				<ul class="nav-list">
+					<li><a href="#task1">Home</a></li>
+					<li><a href="#task7">Events</a></li>
+					<li><a href="#task11">Contact</a></li>
+				</ul>
+			</nav>
+			<ul class="bullet-list">
+				<li>Registration</li>
+				<li>Workshops</li>
+				<li>Meetups</li>
+			</ul>
+		</section>
+
+		<!-- 7. Table Styling -->
+		<section id="task7" class="boxModelDemo">
+			<h2>Table Styling</h2>
+			<table>
+				<thead>
+					<tr>
+						<th>Event</th>
+						<th>Date</th>
+						<th>Status</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Workshop</td>
+						<td>Jun 10</td>
+						<td>Open</td>
+					</tr>
+					<tr>
+						<td>Music Night</td>
+						<td>Jun 12</td>
+						<td>Full</td>
+					</tr>
+				</tbody>
+			</table>
+		</section>
+
+		<!-- 8. Box Model & Layout Control -->
+		<section id="task8" class="boxModelDemo">
+			<h2>Box Model & Layout Control</h2>
+			<div class="eventCard">Border, padding, and margin are visible here.</div>
+			<form class="boxModelDemo form-demo">
+				<label>Name <input type="text" value="Selected field"></label>
+				<label>Email <input type="email" value="person@example.com"></label>
+			</form>
+			<p>Visibility hidden stays in the layout. Display none removes the element.</p>
+			<div class="boxModelDemo visibility-hidden">This uses visibility hidden.</div>
+			<div class="boxModelDemo display-none">This uses display none.</div>
+		</section>
+
+		<!-- 9. Multiple Columns in Text -->
+		<section id="task9" class="boxModelDemo">
+			<h2>Multiple Columns in Text</h2>
+			<article class="newsArticle">
+				<h3>Community Bulletin</h3>
+				<p>The local portal shares events, updates, and volunteer stories for the neighborhood.</p>
+				<p>Residents can read the weekly bulletin in a newspaper-style layout with two columns and a rule between them.</p>
+			</article>
+		</section>
+
+		<!-- 10. Responsive Web Design with Media Queries -->
+		<section id="task10" class="boxModelDemo responsive-panel">
+			<h2>Responsive Design</h2>
+			<div class="layout-grid">
+				<div class="eventCard">One</div>
+				<div class="eventCard">Two</div>
+				<div class="eventCard">Three</div>
+			</div>
+			<img class="hero-image" src="../html/assets/community-meetup.jpg" alt="Community meetup">
+		</section>
+
+		<!-- 11. Debug and Test with Dev Tools and VS Code -->
+		<section id="task11" class="boxModelDemo">
+			<h2>Debug and Test</h2>
+			<p class="debug-note">Use the device toolbar, inspect styles, and confirm style.css loads in the Network tab.</p>
+		</section>
+	</main>
+
+	<footer class="site-footer">Contact: +91 9012345678</footer>
+</body>
+</html>

@@ -1,9 +1,16 @@
 /*
-11. Debug and Test with Dev Tools and VS Code
-Scenario: Some users report layout breaking on smaller screens.
-Objective: Use DevTools to test styles and debug.
-Task:
-• Use Chrome’s device toolbar to simulate different screen sizes
-• Inspect applied styles and test different values live
-• Use the Network tab to check if the external CSS is loaded
-*/
+ * Task 11: Debug and Test with Dev Tools and VS Code
+ * 
+ * Browser DevTools tasks:
+ * - Use device toolbar to test responsive breakpoints
+ * - Inspect styles tab to understand cascade and specificity
+ * - Verify style.css loads in the Network tab
+ * - Check VS Code built-in validation for CSS errors
+ */
+
+/* Placeholder styles for task 11 */
+.debug-note {
+    padding: 8px;
+    font-style: italic;
+    color: #4b5563;
+}

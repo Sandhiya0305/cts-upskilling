@@ -1,0 +1,15 @@
+/*
+ * Task 9: Multiple Columns in Text
+ * 
+ * Apply a newspaper-style multi-column layout to a long text block
+ * to improve readability using at least two columns.
+ */
+
+/* Placeholder styles for task 9 */
+.newsArticle {
+    column-count: 2;
+    column-gap: 30px;
+    column-rule: 1px solid gray;
+    background: rgba(255, 255, 255, 0.88);
+    padding: 16px;
+}

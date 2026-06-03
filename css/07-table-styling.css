@@ -1,0 +1,24 @@
+/*
+ * Task 7: Table Styling
+ * 
+ * Style a table to look like a shortlist directory:
+ * - full width alignment
+ * - collapsed borders
+ * - zebra-striping (even rows)
+ * - colored header row
+ * - first and last column emphasized with color
+ */
+
+/* Placeholder styles for task 7 */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+    margin-top: 12px;
+}
+
+th, td {
+    border: 1px solid #94a3b8;
+    padding: 12px;
+    background: #f8fafc;
+}

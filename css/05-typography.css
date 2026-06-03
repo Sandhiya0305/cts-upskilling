@@ -1,9 +1,35 @@
 /*
-5. Typography: Fonts and Text
-Scenario: The marketing team wants more appealing fonts and better readability.
-Objective: Enhance textual appearance using CSS properties.
-Task:
-• Use @import or <link> to include a Google Font
-• Set font-family, font-size, font-style, font-weight in different sections
-• Use text-align, text-transform, letter-spacing, line-height on descriptions
-*/
+ * Task 5: Typography – Fonts and Text
+ * 
+ * Apply multiple CSS text properties to elements with class .font-bootstrap:
+ * - color
+ * - font-family
+ * - font-size
+ * - font-weight
+ * 
+ * Style the >= sign button so its text is:
+ * - centered
+ * - uppercased
+ * - outlined
+ * - bold
+ * - and sized 14px
+ * 
+ * Style the category label with text:
+ * - color: red
+ * - letter-spacing: 3px
+ * - and in small-caps
+ * 
+ * Style the enter button with text:
+ * - color: white
+ * - underline-styled
+ * - vertically aligned to the top
+ * - in bold
+ */
+
+/* Placeholder styles for task 5 */
+.font-bootstrap {
+    color: #0f172a;
+    font-family: "Roboto", sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+}

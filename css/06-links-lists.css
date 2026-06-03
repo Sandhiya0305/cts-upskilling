@@ -1,9 +1,24 @@
 /*
-6. Link and List Styling
-Scenario: The default blue links and bullet lists don’t match the design.
-Objective: Customize links and lists.
-Task:
-• Style links with :link, :hover, :active, and :visited pseudo-classes
-• Use list-style-type, list-style-position, and remove bullets from nav menus
-• Add padding and margin to list items for spacing
-*/
+ * Task 6: Link and List Styling
+ * 
+ * Style links for different states:
+ * - unvisited (a:link)
+ * - visited (a:visited)
+ * - hover (a:hover)
+ * - active (a:active) — must come AFTER hover
+ * 
+ * Style an unordered list:
+ * - remove default bullets
+ * - use a square bullet type
+ */
+
+/* Placeholder styles for task 6 */
+.link-nav a:link {
+    color: #1d4ed8;
+}
+
+.nav-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}

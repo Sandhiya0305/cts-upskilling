@@ -1,0 +1,38 @@
+/*
+ * Task 10: Responsive Web Design with Media Queries
+ * 
+ * Apply responsive techniques:
+ * - Percentage-based widths for containers
+ * - Fluid typography with vw units
+ * - Flexible images (max-width + height: auto)
+ * - Media queries to adjust grid, font sizes, and nav direction
+ *   at breakpoints (e.g., 768px)
+ */
+
+/* Placeholder styles for task 10 */
+.layout-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+    width: 90%;
+}
+
+@media (max-width: 768px) {
+    .site-nav {
+        flex-direction: column;
+    }
+
+    .layout-grid {
+        grid-template-columns: 1fr;
+        width: 100%;
+    }
+
+    .responsive-panel {
+        width: 100%;
+        font-size: 4vw;
+    }
+
+    .hero-image {
+        width: 100%;
+    }
+}

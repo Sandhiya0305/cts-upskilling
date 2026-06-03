@@ -1,0 +1,15 @@
+/*
+ * Task 2: CSS Syntax and Comments
+ * 
+ * Rules, declarations, properties, and values.
+ * Practice single-line  and multi-line comments
+ * to document styles in this stylesheet.
+ */
+
+/* Placeholder styles for task 2 */
+.boxModelDemo {
+    border: 1px solid #cbd5e1;
+    padding: 12px;
+    margin: 12px 0;
+    background: #ffffff;
+}

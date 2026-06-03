@@ -1,0 +1,16 @@
+/*
+ * Task 1: Inline vs Internal vs External CSS
+ * 
+ * Create three styles for the h1 heading and confirm the specificity order:
+ * External < Internal (style tag) < Inline (style attribute)
+ * 
+ * The Community Portal uses all three. Inspect with DevTools
+ * to see which rule wins and why.
+ */
+
+/* Placeholder styles for task 1 */
+.site-header {
+    padding: 16px;
+    background: rgba(15, 23, 42, 0.9);
+    color: #ffffff;
+}

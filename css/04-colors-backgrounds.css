@@ -1,0 +1,13 @@
+/*
+ * Task 4: Color & Background Styling
+ * 
+ * Apply nested city council branding to section:
+ * background image, color (text), background-color, and shorthand background.
+ */
+
+/* Placeholder styles for task 4 */
+.sectionHeader {
+    color: rgba(255, 255, 255, 0.95);
+    background: linear-gradient(90deg, #1d4ed8, #38bdf8);
+    padding: 14px 16px;
+}
